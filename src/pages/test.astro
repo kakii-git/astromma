@@ -1,0 +1,26 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+const items = ["M", "M", "A"];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<ul>
+                {items.map((item) => (
+                    <li>{item}</li>
+                ))}
+            </ul>
+            <p>Astroの<a href="/about">概要</a>についてもっと読む！</p>
+		</main>
+		<Footer />
+	</body>
+</html>
